@@ -1,4 +1,4 @@
-# slider-touch
+# Demonstração
 Slider touch com miniatura
-[https://codepen.io/jamesrmoro/pen/yoLEpY]
-[a relative link](other_file.md)
+https://codepen.io/jamesrmoro/pen/yoLEpY
+[Veja online](https://codepen.io/jamesrmoro/pen/yoLEpY)
