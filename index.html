@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Slider Touch</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+	<body>
+		<div class="row">
+
+			<!-- slider -->
+			<div class="slider">
+				<div data-index="1">
+					<img src="http://placehold.it/1200x600&text=Slider 1" alt="Slider 1">
+				</div>
+				<div data-index="2">
+					<img src="http://placehold.it/1200x600&text=Slider 2" alt="Slider 2">
+				</div>
+				<div data-index="3">
+					<img src="http://placehold.it/1200x600&text=Slider 3" alt="Slider 3">
+				</div>
+				<div data-index="4">
+					<img src="http://placehold.it/1200x600&text=Slider 4" alt="Slider 4">
+				</div>
+				<div data-index="5">
+					<img src="http://placehold.it/1200x600&text=Slider 5" alt="Slider 5">
+				</div>
+			</div>
+
+			<!-- miniaturas -->
+			<div class="slider-nav-thumbnails">
+				<div><img src="http://placehold.it/190x80&text=Miniatura 1" slide="Miniatura 1">
+				</div>
+				<div><img src="http://placehold.it/190x80&text=Miniatura 2" slide="Miniatura 2">
+				</div>
+				<div><img src="http://placehold.it/190x80&text=Miniatura 3" slide="Miniatura 3">
+				</div>
+				<div><img src="http://placehold.it/190x80&text=Miniatura 4" slide="Miniatura 4">
+				</div>
+				<div><img src="http://placehold.it/190x80&text=Miniatura 5" slide="Miniatura 5">
+				</div>
+			</div>
+
+			<section class="content one" data-id="1">
+				Conteúdo do slider 1
+			</section>
+
+			<section class="content two" data-id="2">
+				Conteúdo do slider 2
+			</section>
+
+			<section class="content three" data-id="3">
+				Conteúdo do slider 3
+			</section>
+
+			<section class="content four" data-id="4">
+				Conteúdo do slider 4
+			</section>
+
+			<section class="content five" data-id="5">
+				Conteúdo do slider 5
+			</section>
+
+		</div>
+
+		<script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+		<script src="slick.js"></script>
+
+		<script>
+
+			$('.slider').slick({
+			 	slidesToShow: 1,
+			 	slidesToScroll: 1,
+			 	arrows: true,
+			 	fade: false,
+			 	asNavFor: '.slider-nav-thumbnails',
+			});
+
+			$('.slider-nav-thumbnails').slick({
+			 	slidesToShow: 5,
+			 	slidesToScroll: 1,
+			 	asNavFor: '.slider',
+			 	dots: true,
+			 	focusOnSelect: true
+			});
+
+			//UPDATED
+			$('.slider').on('afterChange', function(event, slick, currentSlide){
+				$('.content').hide();
+				$('.content[data-id=' + (currentSlide + 1) + ']').show();
+			});
+
+		</script>
+
+	</body>
+</html>
